@@ -1,0 +1,75 @@
+// per body 
+@import 'normalize';
+@import 'header';
+@import 'footer';
+
+
+
+// mein colors 
+$black:#001219;
+$blue:#21759b;
+$white:#edf6f9;
+$orange:#ee9b00;
+$red:#ae2012;
+
+body{
+    background-color: $white;
+    font-family: 'Roboto', sans-serif;
+    &::-webkit-scrollbar{
+        background-color: $white;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color:$blue ;
+        border-radius: 25px;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: $white;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+    background-color: $white;
+    padding-bottom: 34px;
+    box-shadow: 2px 2px 5px black;
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(2,auto);
+    grid-gap: 1rem;
+    grid-template-areas:
+    'img img img'
+    'article article2 article3'
+    'article article2 article3'
+    ;
+    .content-img{
+        grid-area: img;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .img-flex{
+            width: 90%;
+            height: 500px;
+            margin: 0 auto;
+        }
+    }
+    .content-article{
+        padding: 12px;
+    }
+    .content-article num{
+        grid-area: article;
+    }
+    .content-article num2{
+        grid-area: article2;
+    }
+    .content-article num3{
+        grid-area: article3;
+    }
+   
+    
+}
+@media screen and(max-width:800px) {
+ 
+}
