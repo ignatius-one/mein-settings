@@ -15,12 +15,14 @@ $red:#ae2012;
 body{
     background-color: $white;
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
     &::-webkit-scrollbar{
         background-color: $white;
     }
     &::-webkit-scrollbar-thumb{
+        width: 7px;
         background-color:$blue ;
-        border-radius: 25px;
+        border-radius: 1.5625em;
     }
 }
 
@@ -28,48 +30,122 @@ a{
     text-decoration: none;
     color: $white;
 }
-.container{
+
+header{
     width: 90%;
     margin: 0 auto;
-    background-color: $white;
-    padding-bottom: 34px;
-    box-shadow: 2px 2px 5px black;
-    display: grid;
-    grid-template-columns:repeat(3,1fr);
-    grid-template-rows:repeat(2,auto);
-    grid-gap: 1rem;
-    grid-template-areas:
-    'img img img'
-    'article article2 article3'
-    'article article2 article3'
-    ;
-    .content-img{
-        grid-area: img;
-        img{
-            width: 100%;
-            height: 100%;
-        }
-        .img-flex{
-            width: 90%;
-            height: 500px;
-            margin: 0 auto;
-        }
-    }
-    .content-article{
-        padding: 12px;
-    }
-    .content-article num{
-        grid-area: article;
-    }
-    .content-article num2{
-        grid-area: article2;
-    }
-    .content-article num3{
-        grid-area: article3;
-    }
-   
     
+   hr{
+       background-color: #001219;
+       height: 5px;
+       margin-bottom: 8px;
+   }
 }
-@media screen and(max-width:800px) {
- 
+
+
+
+.container-total{
+    width: 90%;
+    margin: 0 auto;
+    color: $white;
+    font-size: 1em;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,auto);
+    gap: 10px;
+    grid-template-areas: 
+    'parrafo parrafo img img'
+    'parrafo parrafo aside aside'
+    'widget widget2 aside aside'
+    'widget3 widget3 aside aside'
+    ;
+    .contente-p{
+        background-color: $black;
+        grid-area: parrafo;
+        padding: .75em;
+        a{
+            color: $blue;
+            text-decoration:underline;
+        }
+    }
+    .content-img{
+        width: 100%;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background: url(/src/wordpress2.png);
+        grid-area: img;
+    }
+    .widget-1{
+        background-color: $blue;
+        padding: .75em;
+        grid-area:widget ;
+    }
+    .widget-2{
+        color: $black;
+        background-color: $white;
+        padding: .75em;
+        grid-area:widget2 ;
+    }
+    .widget-3{
+        background-color: $blue;
+        padding: .75em;
+        grid-area:widget3 ;
+    }
+    .aside{
+        background-color: $black;
+
+        padding: .75em;
+        grid-area: aside;
+    }
 }
+
+
+//Pantallas medianas (tablets de menos de 992px)
+@media (max-width: 991.98px) { 
+    body{
+        font-size: 13px;
+    }
+    .container-total{
+    grid-template-areas: 
+    'parrafo parrafo parrafo parrafo'
+    'img img img img'
+    'widget widget2 aside aside'
+    'widget widget2 aside aside'
+    'widget3 widget3 aside aside'
+    ;
+    }
+ }
+
+//Pantallas pequeñas (móviles en landscape de menos de 768px)
+@media (max-width: 767.98px) { 
+    body{
+        font-size: 12px;
+    }
+    .container-total{
+        grid-template-areas: 
+    'parrafo parrafo parrafo parrafo'
+    'img img img aside'
+    'widget widget widget aside'
+    'widget2 widget2 widget3 widget3'
+    ;
+    }
+}
+
+//Pantallas muy pequeñas (móviles en portrait de menos de 576px)
+@media (max-width: 575.98px) { 
+    body{
+        font-size: 12px;
+    }
+    .container-total{
+        grid-template-areas: 
+    'parrafo parrafo parrafo parrafo'
+    'img img img img'
+    'aside aside aside aside'
+    'widget widget widget widget'
+    'widget2 widget2 widget2 widget2'
+    'widget3 widget3 widget3 widget3'
+    ;
+    }
+
+ }

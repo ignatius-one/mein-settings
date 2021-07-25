@@ -1,0 +1,36 @@
+// mein colors 
+$black:#001219;
+$blue:#21759b;
+$white:#edf6f9;
+$orange:#ee9b00;
+$red:#ae2012;
+
+
+footer{
+    margin-top: 15px;
+    color: $white;
+    background-color:$blue ;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2,auto);
+    gap: 10px;
+    grid-template-areas:
+    'social-media conteido  '
+    'date date'
+    ;
+    font-size: 19px;
+    .socila-media{
+        grid-area: social-media;
+    }
+    .content-footer{
+        grid-area: conteido;
+    }
+    .date{
+        font-size: 1.5625rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        grid-area: date;
+    }
+}

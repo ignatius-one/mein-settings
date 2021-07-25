@@ -4,6 +4,20 @@
      padding: 0;
      box-sizing: border-box;
 }
+body{
+    font-size: 16px;
+}
+// efecto 
+.headroom{
+	transition: transform .3s ease;
+}
+.headroom--pinned{
+	transform: translateY(0%);
+}
+.headroom--unpinned{
+	transform: translateY(-100%);
+}
+
 $black:#001219;
 $blue:#21759b;
 $white:#edf6f9;
@@ -13,7 +27,7 @@ $red:#ae2012;
 .container-menu{
 width: 100%;
 top: 0;
-position: fixed;
+position: sticky;
 background-color: $blue;
 display: flex;
 flex-direction: row;
@@ -42,15 +56,13 @@ display: flex;
 flex-direction: row;
 align-items: center;
     img{
-    height: 100px;
-    width: 100px;
+    height: 55px;
+    width: 55px;
     }
     p{
     color: $white;
     font-weight: bold;
-    background-color: $blue;
-    padding: 12px;
-    border-radius: 12px;
+    font-size: 1.1875em;
     }
 }  
 .elemets-nav{
@@ -60,9 +72,8 @@ align-items: center;
          a{
         padding: 1rem;
         margin-left: 1rem;
-        font-size: 1.7rem;
+        font-size: 1.1875em;
         font-weight: bold;
-        border-radius: 45px;
         transition: .6s ease-in-out;
         &:hover{
             background-color: $white;
@@ -71,7 +82,7 @@ align-items: center;
         }
     }
     p{
-    padding: 12px;
+    padding: .75em;
     }
 }
 }
@@ -81,19 +92,21 @@ align-items: center;
 @media screen and(max-width:800px) {
 .container-menu{
      color:$white;
-     position: fixed;
      top: 0;
+     position: fixed;
      width: 100%;
      height: 100%;
      z-index: 100;
-     clip-path: circle(50px at 50% 0);     
+     clip-path: circle(35px at 50% 0);     
      text-align: center;
      transition:.7s ease all ;
     //  flex  
+    justify-content: space-between;
      flex-direction: column;
      align-items: center;
      &.active{
-     clip-path: circle(100% at 50% 0);
+     clip-path: circle(150% at 50% 0);
+     padding-bottom: 34px;
         // logo 
 .flex-logo{
             display: flex;
@@ -109,7 +122,7 @@ align-items: center;
 
 .btn-open-menu{
     display: block;
-     font-size: 1.7rem;
+     font-size: 1.7em;
      cursor: pointer;
         &:hover{animation: rotate 1.5s alternate;}
     }
@@ -122,17 +135,17 @@ align-items: center;
                 flex-direction: column;
                 align-items: center;
          li{
-        padding-bottom: 20px;
-        margin-bottom: 20px;
+        padding-bottom: 1.25em;
+        margin-bottom: 1.25em;
         animation: uplatter .8s ease;
             a{
              
             &:hover{
             background-color: $black;
-             border-radius: 12px;
+             border-radius: .75em;
             }
-          font-size: 2.7rem;
-          padding: 5px;
+          font-size: 24px;
+        //   padding: 5px;
           text-transform: uppercase;
           transition: .5s ease all;
           }
@@ -159,4 +172,3 @@ align-items: center;
 
 
 }
-
