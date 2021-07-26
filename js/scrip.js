@@ -10,4 +10,4 @@ $(function () {
     headroom.init();   
 })
 
-document.getElementById('date').innerHTML = new Date().getFullYear()
+document.getElementById('date').innerHTML = ` ${new Date().getFullYear()}`

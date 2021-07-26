@@ -1,4 +1,4 @@
-
+@import url(/sass/SpaceMono-Regular.ttf);
 * {
      margin: 0;
      padding: 0;
@@ -56,14 +56,29 @@ align-items: center;
 display: flex;
 flex-direction: row;
 align-items: center;
-    img{
-    height: 55px;
-    width: 55px;
-    }
     p{
+    margin: 3px;
     color: $white;
-    font-weight: bold;
+    font-family: 'SpaceMono-Regular';
+    padding: 9px;
+    border-radius: 5px;
     font-size: 1.1875em;
+    border: 1px solid $black;
+    animation: parpadea 2s infinite;
+    @keyframes parpadea {
+        0%{
+            color: $white;
+        }
+        50%{
+            color: $white;
+        }
+        90%{
+            color: $blue;
+        }
+        100%{
+            color: $white;
+        }
+    }
     }
 }  
 .elemets-nav{

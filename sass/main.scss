@@ -18,13 +18,9 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     &::-webkit-scrollbar{
-        background-color: $white;
+        display: none;
     }
-    &::-webkit-scrollbar-thumb{
-        width: 7px;
-        background-color:$blue ;
-        border-radius: 1.5625em;
-    }
+ 
 }
 
 a{
@@ -55,32 +51,33 @@ h1{
     font-size: 1em;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(4,auto);
+    grid-template-rows: repeat(3,auto);
     gap: 10px;
     grid-template-areas: 
-    'parrafo parrafo parrafo parrafo'
-    'img img img aside'
-    'widget widget widget aside'
-    'widget2 widget3 widget3 aside'
+    'parrafo parrafo parrafo parrafo '
+    'img img widget widget'
+    'widget2  widget2 widget3 widget3'
     ;
+    
     @mixin border-radius {
         font-family: 'Roboto', sans-serif;
         border-radius: 20px;
         padding: .75em;
         color: $gray;
-        box-shadow: 2px 2px 10px rgba(0,0,0,.3);
+        box-shadow: 2px 2px 10px rgba(0,0,0,.2);
         ul{
             list-style: none;
         }
+        
         @media (max-width:800px) {
            img{
-            width: 100%;
+            width: 70%;
             height: auto;
             }
         }
         @media (max-width:600px) {
             img{
-            width: 100%;
+            width: 85%;
             height: auto;
             }
         }
@@ -89,6 +86,7 @@ h1{
     .contente-p{
         grid-area: parrafo;
         padding: .75em;
+        
         @include border-radius();
         a{
             color: $blue;
@@ -96,8 +94,12 @@ h1{
         }
     }
     .content-img{
-        @include border-radius();   
+        @include border-radius();
+        
         grid-area: img;
+        .container-list{
+            display: flex;
+        }
     }
     .widget-1{
         @include border-radius();   
@@ -120,18 +122,19 @@ h1{
 
 
 //Pantallas pequeñas (móviles en landscape de menos de 768px)
-@media (max-width: 767.98px) { 
+@media (max-width: 800px) { 
     body{
-        font-size: 12px;
+        font-size: 15x;
     }
+    
     .container-total{
-        grid-template-areas: 
-    'parrafo parrafo parrafo aside'
-    'img      img     img       aside'
-    'widget  widget  widget      aside'
-    'widget2  widget2  widget2      aside'
-    'widget3  widget3  widget3      aside'
+         grid-template-areas: 
+    'parrafo parrafo parrafo parrafo '
+    'img img img img'
+    'widget widget widget widget'
+    'widget2  widget2 widget3 widget3'
     ;
+    
     }
 }
 
@@ -144,7 +147,6 @@ h1{
         grid-template-areas: 
     'parrafo parrafo parrafo parrafo'
     'img img img img'
-    'aside aside aside aside'
     'widget widget widget widget'
     'widget2 widget2 widget2 widget2'
     'widget3 widget3 widget3 widget3'
