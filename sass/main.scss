@@ -1,8 +1,6 @@
 // per body 
 @import 'normalize';
 @import 'header';
-@import 'footer';
-
 
 
 // mein colors 
@@ -16,6 +14,7 @@ $red:#ae2012;
 body{
     background-color: $white;
     font-family: 'Roboto', sans-serif;
+
     font-size: 16px;
     &::-webkit-scrollbar{
         display: none;
@@ -26,38 +25,54 @@ body{
 a{
     text-decoration: none;
     color: $white;
-}
-
-    
+}   
    hr{
        background-color: $black;
        height: 5px;
        margin-bottom: 8px;
    }
+
+.title{
+    color: #343a40;
+    text-align: center;
+}
 header{
-    width: 90%;
+    padding-top: 6.25em;
+    width: 100%;
     margin: 0 auto;
-
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 31.25em;
+    background-size: cover;
+    background:url(wBackground.jpg) ;
+    h1{
+    color: $white;
+    padding: 1.25em;
+    border: .125em solid $white ;   
+    }      
 }
-
-h1{
+.container-out{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: .75em;
+    h1{
     color: $black;
+    }
+    p{
+    text-align: center;
+    }
 }
+
+
 
 .container-total{
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     color: $white;
     font-size: 1em;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(3,auto);
-    gap: 10px;
-    grid-template-areas: 
-    'parrafo parrafo parrafo parrafo '
-    'img img widget widget'
-    'widget2  widget2 widget3 widget3'
-    ;
+   
     
     @mixin border-radius {
         font-family: 'Roboto', sans-serif;
@@ -83,39 +98,31 @@ h1{
         }
     }
     
-    .contente-p{
-        grid-area: parrafo;
-        padding: .75em;
-        
-        @include border-radius();
-        a{
-            color: $blue;
-            text-decoration:underline;
-        }
-    }
+
     .content-img{
         @include border-radius();
-        
-        grid-area: img;
+        display: flex;
+    
         .container-list{
             display: flex;
+            flex-flow: column wrap;
         }
+           @media (max-width:1235px) {
+            flex-flow: row wrap;
+        }
+
     }
     .widget-1{
         @include border-radius();   
-        grid-area:widget ;
     }
     .widget-2{
         @include border-radius();   
-        grid-area:widget2 ;
     }
     .widget-3{
         @include border-radius();   
-        grid-area:widget3 ;
     }
     .aside{
         @include border-radius();   
-        grid-area: aside;
     }
 }
 
@@ -126,16 +133,7 @@ h1{
     body{
         font-size: 15x;
     }
-    
-    .container-total{
-         grid-template-areas: 
-    'parrafo parrafo parrafo parrafo '
-    'img img img img'
-    'widget widget widget widget'
-    'widget2  widget2 widget3 widget3'
-    ;
-    
-    }
+
 }
 
 //Pantallas muy pequeñas (móviles en portrait de menos de 576px)
@@ -143,14 +141,22 @@ h1{
     body{
         font-size: 12px;
     }
-    .container-total{
-        grid-template-areas: 
-    'parrafo parrafo parrafo parrafo'
-    'img img img img'
-    'widget widget widget widget'
-    'widget2 widget2 widget2 widget2'
-    'widget3 widget3 widget3 widget3'
-    ;
-    }
 
  }
+
+
+
+//  @keyframes disaapier {
+//      0%{
+//          transform: scale(0);
+//          transform: scaleX(0);
+//         }
+//         50%{
+//             transform: scale(5%);
+//             transform: scaleX(100%);
+//         }
+//         100%{
+//             transform: scale(15%);
+//             transform: scaleX(100%);
+//      }
+//  }
