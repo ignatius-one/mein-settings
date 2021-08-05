@@ -1,4 +1,6 @@
-// mein colors 
+
+
+
 $black:#212529;
 $blue:#0466c8;
 $white:#edf6f9;
@@ -15,15 +17,25 @@ footer{
     background-color: $blue;
    
     .container_footer{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
         max-width: 1200px;
        
     }
     .box-footer{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-flow: column ;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: column ;
+                flex-flow: column ;
         padding: 2.5em;
         .logo{
         color: $white;

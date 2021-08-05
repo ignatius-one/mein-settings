@@ -19,3 +19,21 @@ $(function () {
 
 
 document.getElementById('date').innerHTML = new Date().getFullYear()
+
+
+// top 
+window.onscroll = function () {
+    if (document.documentElement.scrollTop > 100) {
+        document.querySelector('.btn-top-container')
+            .classList.add('show-top')
+    } else {
+          document.querySelector('.btn-top-container')
+            .classList.remove('show-top')
+    }
+}
+document.querySelector('.btn-top-container').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior:'smooth',
+    })
+})
