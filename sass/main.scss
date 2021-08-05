@@ -1,7 +1,7 @@
 
 @import 'normalize';
 @import 'header';
-
+@import 'footer';
 
 
 $black:#212529;
@@ -22,6 +22,8 @@ body{
  
 }
 
+
+
 a{
     text-decoration: none;
     color: $white;
@@ -37,6 +39,8 @@ a{
     text-align: center;
 }
 header{
+
+
     padding-top: 6.25em;
     width: 100%;
     margin: 0 auto;
@@ -52,13 +56,29 @@ header{
         -ms-flex-pack: center;
             justify-content: center;
     height: 31.25em;
+    overflow: hidden;
+    background: url(wordpress.jpg);
+    background-position: center;
+    background-attachment: fixed;
     background-size: cover;
-    background:url(wBackground.jpg) ;
-    h1{
+    background-repeat: no-repeat;
+    position: relative;
+    &::before{
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.6);
+    }
+  
+     h1{
     color: $white;
     padding: 1.25em;
-    border: .125em solid $white ;   
-    }      
+    border: .125em solid $white ;  
+    z-index: 1; 
+    }
 }
 .container-out{
     width: 80%;
@@ -79,13 +99,15 @@ header{
     margin: 0 auto;
     color: $white;
     font-size: 1em;
-   
+    
     
     @mixin border-radius {
         font-family: 'Roboto', sans-serif;
         border-radius: 20px;
-        padding: .75em;
+        padding: 1.25em;
         color: $gray;
+        display: flex;
+        margin-bottom: .9375em;
         -webkit-box-shadow: 2px 2px 10px rgba(0,0,0,.2);
                 box-shadow: 2px 2px 10px rgba(0,0,0,.2);
         ul{
@@ -104,14 +126,18 @@ header{
             height: auto;
             }
         }
+         @media (max-width:1235px) {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-flow: row wrap;
+                    flex-flow: row wrap;
+        }
     }
     
 
     .content-img{
         @include border-radius();
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+      
     
         .container-list{
             display: -webkit-box;
@@ -122,25 +148,24 @@ header{
                 -ms-flex-flow: column wrap;
                     flex-flow: column wrap;
         }
-           @media (max-width:1235px) {
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-                -ms-flex-flow: row wrap;
-                    flex-flow: row wrap;
-        }
+         
 
     }
     .widget-1{
         @include border-radius();   
+       
     }
     .widget-2{
         @include border-radius();   
+       
     }
     .widget-3{
         @include border-radius();   
+      
     }
     .aside{
         @include border-radius();   
+        
     }
 }
 

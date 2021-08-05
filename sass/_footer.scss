@@ -7,29 +7,34 @@ $red:#ae2012;
 
 
 footer{
-    margin-top: 15px;
+    margin-top: 1.5625em;
+   .nav-footer{
+    background-color: $blue;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   align-content: center;
+   ul{
+       padding: 1.25em;
+   }
+   h3{
+       color: $white;
+   }
+   li{
+       color: $white;
+   }
+   @media (max-width:620px) {
+    flex-direction: column;
+    align-items: center;
+}
+}
+.credits{
+    background-color: $blue;
     color: $white;
-    background-color:$blue ;
-    font-size: 1.125em;
-    ul{
-        list-style: none;
-    }
-    .title-footer{
-        font-size: 1.1875em;
-    }
-    .footer-aling{
-            display: flex;
-            flex-flow:row wrap;
-            justify-content: space-around;
-            align-items: center;
-            align-content: center;
-    }
-    .date{
-        font-size: 1.125em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        grid-area: date;
-    }
+    font-size: 1.25em;
+    text-align: center;
+    font-weight: bold;
+    padding: .3125em;
+}
+
 }
