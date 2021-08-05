@@ -7,34 +7,69 @@ $red:#ae2012;
 
 
 footer{
-    margin-top: 1.5625em;
-   .nav-footer{
-    background-color: $blue;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   align-content: center;
-   ul{
-       padding: 1.25em;
-   }
-   h3{
-       color: $white;
-   }
-   li{
-       color: $white;
-   }
-   @media (max-width:620px) {
-    flex-direction: column;
-    align-items: center;
-}
-}
-.credits{
-    background-color: $blue;
     color: $white;
-    font-size: 1.25em;
-    text-align: center;
-    font-weight: bold;
-    padding: .3125em;
+    width: 100%;
+    padding: 3.125em 0;
+    background-size: cover;
+    background: url(../src/media/footer.svg); 
+    background-color: $blue;
+   
+    .container_footer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        max-width: 1200px;
+       
+    }
+    .box-footer{
+        display: flex;
+        flex-flow: column ;
+        padding: 2.5em;
+        .logo{
+        color: $white;
+        border: 1px solid $white;
+        padding: 10px;
+        font-family: 'dashause';
+        width: 7.125em;
+        }
+        a{
+            margin-top: .1875em;
+            &:hover{
+                opacity: .8;
+            }
+            .fab{
+                font-size: 1.5625em;
+                margin-right: .1875em;
+            }
+        }
+        h2{
+            margin-bottom: .3125em;
+        }
+        
+        .terms{
+            margin-top: .75em;
+            max-width: 18.75em;
+        }
+    }
+
+
+        .box_copyrigth{
+        text-align: center;
+        padding: 2px 2.5em;
+         hr{
+        height: .0625rem;
+        background-color: $white;
+    }
+        p{
+            letter-spacing: .0625em;
+            font-weight: bold;
+            padding-bottom: .9375em;
+        }
+    }
+
 }
 
+@font-face {
+    font-family: 'dashause';
+    src: url(../src/fonts/dashause.ttf);
 }

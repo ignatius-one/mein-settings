@@ -16,3 +16,6 @@ $(function () {
     let headroom = new Headroom(header);
     headroom.init();   
 })
+
+
+document.getElementById('date').innerHTML = new Date().getFullYear()
