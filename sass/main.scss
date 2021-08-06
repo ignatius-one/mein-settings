@@ -21,6 +21,9 @@ body{
     }
  
 }
+html{
+    scroll-behavior: smooth;
+}
 
 
 
@@ -84,13 +87,37 @@ header{
     width: 80%;
     margin: 0 auto;
     padding-bottom: .75em;
+    ul{
+        margin-top: .3125em;
+        list-style: square;
+        margin-bottom: .3125em;
+    }
     h1{
     color: $black;
     }
     p{
-    text-align: center;
+    color: $gray;
+    text-align: left;
     }
+    a{
+        color: $blue;
+        letter-spacing: .0625em;
+        &:hover{
+            opacity: .8;
+        }
+    }
+    
 }
+.a{
+    display: flex;
+     margin-bottom: .9375em;
+           @media (max-width:879px) {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-flow: row wrap;
+                    flex-flow: row wrap;
+        }
+    }
 
 
 
@@ -153,7 +180,15 @@ header{
     }
     .widget-1{
         @include border-radius();   
-       
+    }
+    .a{
+        display: flex;
+        ul{
+            margin-top: .3125em;
+        }
+        a{
+            color: $blue;
+        }
     }
     .widget-2{
         @include border-radius();   
